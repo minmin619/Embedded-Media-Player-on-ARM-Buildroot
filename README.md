@@ -6,7 +6,7 @@ This project demonstrates how to cross-compile a GStreamer-based video player an
 - GStreamer integration for video playback (H.264, MP4)
 - Custom root filesystem overlay (preloaded sample video)
 - Runs on QEMU (vexpress-a9)
-.
+```
 ├── package/
 │   └── simple_player/             # Custom Buildroot package
 │       ├── simple_player.c
@@ -18,26 +18,27 @@ This project demonstrates how to cross-compile a GStreamer-based video player an
 │           └── rootfs_overlay/
 │               └── usr/share/sample.mp4
 ├── README.md
-
-# 1. Install dependencies
+```
+1. Install dependencies
 sudo apt update
 sudo apt install build-essential git qemu-system-arm
 
-# 2. Clone Buildroot
+2. Clone Buildroot
 git clone https://git.buildroot.net/buildroot
 cd buildroot
 
-# 3. Apply defconfig
+3. Apply defconfig
 make qemu_arm_vexpress_defconfig
 
-# 4. Add custom player
-# (Put your simple_player.c, .mk, and Config.in into package/simple_player/)
-# Add `source "package/simple_player/Config.in"` to package/Config.in
+4. Add custom player
+Put simple_player.c, .mk, and Config.in into package/simple_player/
+custom player : Add `source "package/simple_player/Config.in"` to package/Config.in
 ![image](https://github.com/user-attachments/assets/8454bab4-a4c5-4861-b543-c135fdb6a305)
 
 # 5. Configure packages
 make menuconfig
-# → Target Packages → Multimedia → GStreamer1 → Enable:
+```
+ Target Packages → Multimedia → GStreamer1 → Enable:
 #     [*] gstreamer1
 #     [*] gstreamer1-plugins-base
 #         [*] playback
@@ -47,16 +48,16 @@ make menuconfig
 #     [*] gstreamer1-plugins-good
 #     [*] gstreamer1-plugins-libav
 #     [*] simple_player
-
+```
 # → Filesystem images → Root filesystem overlay
 #     (board/qemu/arm-vexpress/rootfs_overlay)
 ![image](https://github.com/user-attachments/assets/ef7dc73d-a32b-41be-8233-8bf0604d3c0b)
 
-# 6. Build the system
+6. Build the system
 make
 ![image](https://github.com/user-attachments/assets/51c8009b-0999-4ad2-97bc-7ea65f8dec1c)
 
-# 7. Launch QEMU
+7. Launch QEMU
 qemu-system-arm \
   -M vexpress-a9 \
   -m 256M \
