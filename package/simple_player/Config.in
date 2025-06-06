@@ -1,0 +1,10 @@
+config BR2_PACKAGE_SIMPLE_PLAYER
+    bool "simple_player"
+    select BR2_PACKAGE_GSTREAMER1
+    select BR2_PACKAGE_GSTREAMER1_PLUGINS_BASE
+    select BR2_PACKAGE_GSTREAMER1_PLUGINS_GOOD
+    select BR2_PACKAGE_GSTREAMER1_PLUGINS_LIBAV
+
+    help
+      A simple GStreamer video player example for ARM.
+
