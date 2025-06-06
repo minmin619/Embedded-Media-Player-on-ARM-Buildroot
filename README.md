@@ -39,7 +39,7 @@ custom player : Add `source "package/simple_player/Config.in"` to package/Config
 </p>
 
 
-# 5. Configure packages
+5. Configure packages
 make menuconfig
 ```
  Target Packages → Multimedia → GStreamer1 → Enable:
@@ -53,7 +53,7 @@ make menuconfig
 #     [*] gstreamer1-plugins-libav
 #     [*] simple_player
 ```
-# → Filesystem images → Root filesystem overlay
+Filesystem images → Root filesystem overlay
 (board/qemu/arm-vexpress/rootfs_overlay)
 <p align="center">
   <img src="https://github.com/user-attachments/assets/ef7dc73d-a32b-41be-8233-8bf0604d3c0b" width="600">
@@ -62,9 +62,12 @@ make menuconfig
 
 6. Build the system
 make
-![image](https://github.com/user-attachments/assets/51c8009b-0999-4ad2-97bc-7ea65f8dec1c)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/51c8009b-0999-4ad2-97bc-7ea65f8dec1c" width="600">
+</p>
 
-7. Launch QEMU
+
+8. Launch QEMU
 qemu-system-arm \
   -M vexpress-a9 \
   -m 256M \
