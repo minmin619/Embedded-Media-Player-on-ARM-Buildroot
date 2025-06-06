@@ -33,9 +33,9 @@ make qemu_arm_vexpress_defconfig
 4. Add custom player
 Put simple_player.c, .mk, and Config.in into package/simple_player/
 custom player : Add `source "package/simple_player/Config.in"` to package/Config.in
-![image](https://github.com/user-attachments/assets/8454bab4-a4c5-4861-b543-c135fdb6a305)
+
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/ef7dc73d-a32b-41be-8233-8bf0604d3c0b" width="500">
+  <img src="https://github.com/user-attachments/assets/ef7dc73d-a32b-41be-8233-8bf0604d3c0b" width="600">
 </p>
 
 
@@ -55,7 +55,10 @@ make menuconfig
 ```
 # → Filesystem images → Root filesystem overlay
 (board/qemu/arm-vexpress/rootfs_overlay)
-![image](https://github.com/user-attachments/assets/ef7dc73d-a32b-41be-8233-8bf0604d3c0b)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ef7dc73d-a32b-41be-8233-8bf0604d3c0b" width="600">
+</p>
+
 
 6. Build the system
 make
@@ -70,8 +73,10 @@ qemu-system-arm \
   -drive file=output/images/rootfs.ext2,if=sd,format=raw \
   -append "root=/dev/mmcblk0 console=ttyAMA0" \
   -nographic
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b51e791a-673c-4180-9c01-d7229858786b" width="600">
+</p>
 
-![image](https://github.com/user-attachments/assets/b51e791a-673c-4180-9c01-d7229858786b)
 
 - Buildroot internals: defconfig, overlay, package integration
 - Cross-compilation workflow for embedded Linux
