@@ -33,9 +33,10 @@ make qemu_arm_vexpress_defconfig
 4. Add custom player
 Put simple_player.c, .mk, and Config.in into package/simple_player/
 custom player : Add `source "package/simple_player/Config.in"` to package/Config.in
+![image](https://github.com/user-attachments/assets/0f6f51d3-cb92-40ef-bdb8-e0caa16cc0fe)
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/ef7dc73d-a32b-41be-8233-8bf0604d3c0b" width="600">
+  <img src="https://github.com/user-attachments/assets/0f6f51d3-cb92-40ef-bdb8-e0caa16cc0fe" width="600">
 </p>
 
 
